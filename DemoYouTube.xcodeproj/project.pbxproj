@@ -12,6 +12,18 @@
 		2F01F0A52371FE32006F313B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0A42371FE32006F313B /* Channel.swift */; };
 		2F01F0A923720038006F313B /* YouTubeRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0A823720038006F313B /* YouTubeRequestBuilder.swift */; };
 		2F01F0AB23720334006F313B /* YouTubeService+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0AA23720334006F313B /* YouTubeService+Response.swift */; };
+		2F01F0AD237214B1006F313B /* UIImage+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0AC237214B1006F313B /* UIImage+App.swift */; };
+		2F01F0B22372170C006F313B /* VideoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0B12372170C006F313B /* VideoDetailVC.swift */; };
+		2F01F0B423721714006F313B /* VideoDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0B323721714006F313B /* VideoDetailReactor.swift */; };
+		2F01F0B62372171C006F313B /* VideoDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0B52372171C006F313B /* VideoDetailCoordinator.swift */; };
+		2F01F0B823721724006F313B /* VideoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0B723721724006F313B /* VideoDetailInteractor.swift */; };
+		2F01F0BA2372193E006F313B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0B92372193E006F313B /* UIView+.swift */; };
+		2F01F0BC23721A8D006F313B /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0BB23721A8D006F313B /* UIStackView+.swift */; };
+		2F01F0BF23721DA8006F313B /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0BE23721DA8006F313B /* ChannelView.swift */; };
+		2F01F0C423721EED006F313B /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0C323721EED006F313B /* SeparatorView.swift */; };
+		2F01F0C62372202A006F313B /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0C52372202A006F313B /* UILabel+.swift */; };
+		2F01F0C823722351006F313B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0C723722351006F313B /* DetailView.swift */; };
+		2F01F0CA237227C8006F313B /* DetailView.Data+Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0C9237227C8006F313B /* DetailView.Data+Video.swift */; };
 		2F420544237167170033C31D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F420543237167170033C31D /* AppDelegate.swift */; };
 		2F42054A237167180033C31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F420549237167180033C31D /* Assets.xcassets */; };
 		2F420550237167180033C31D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F42054E237167180033C31D /* LaunchScreen.storyboard */; };
@@ -20,7 +32,7 @@
 		2F42056A23716A080033C31D /* SelfContaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42056923716A080033C31D /* SelfContaner.swift */; };
 		2F42056C23716A200033C31D /* AssociatedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42056B23716A200033C31D /* AssociatedStore.swift */; };
 		2F42056E23716ABE0033C31D /* ModuleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42056D23716ABE0033C31D /* ModuleType.swift */; };
-		2FAFD612237196A500AA364E /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFD611237196A500AA364E /* UITableView+Reusable.swift */; };
+		2FAFD612237196A500AA364E /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFD611237196A500AA364E /* UICollectionView+Reusable.swift */; };
 		2FAFD6152371985200AA364E /* VideoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFD6142371985200AA364E /* VideoSection.swift */; };
 		2FAFD6182371987D00AA364E /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFD6172371987D00AA364E /* Video.swift */; };
 		2FAFD61B23719A4C00AA364E /* SceneView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFD61A23719A4C00AA364E /* SceneView+.swift */; };
@@ -44,10 +56,10 @@
 		2FD6ACF72371707800C8C10F /* ModuleCoreAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6ACF62371707800C8C10F /* ModuleCoreAliases.swift */; };
 		2FD6ACF92371709E00C8C10F /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6ACF82371709E00C8C10F /* Coordinatable.swift */; };
 		2FD6ACFB237170B300C8C10F /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6ACFA237170B300C8C10F /* Interactable.swift */; };
-		2FD6ACFD2371771A00C8C10F /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6ACFC2371771A00C8C10F /* ListVC.swift */; };
-		2FD6ACFF2371772000C8C10F /* ListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6ACFE2371772000C8C10F /* ListReactor.swift */; };
-		2FD6AD012371772800C8C10F /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6AD002371772800C8C10F /* ListInteractor.swift */; };
-		2FD6AD032371773000C8C10F /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6AD022371773000C8C10F /* ListCoordinator.swift */; };
+		2FD6ACFD2371771A00C8C10F /* TrendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6ACFC2371771A00C8C10F /* TrendsVC.swift */; };
+		2FD6ACFF2371772000C8C10F /* TrendsReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6ACFE2371772000C8C10F /* TrendsReactor.swift */; };
+		2FD6AD012371772800C8C10F /* TrendsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6AD002371772800C8C10F /* TrendsInteractor.swift */; };
+		2FD6AD032371773000C8C10F /* TrendsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6AD022371773000C8C10F /* TrendsCoordinator.swift */; };
 		2FD6AD062371779900C8C10F /* BaseReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6AD052371779900C8C10F /* BaseReactor.swift */; };
 		2FD6AD08237177C500C8C10F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6AD07237177C500C8C10F /* BaseCoordinator.swift */; };
 		2FD6AD0A237177EA00C8C10F /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6AD09237177EA00C8C10F /* CoordinatorType.swift */; };
@@ -69,6 +81,18 @@
 		2F01F0A42371FE32006F313B /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		2F01F0A823720038006F313B /* YouTubeRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeRequestBuilder.swift; sourceTree = "<group>"; };
 		2F01F0AA23720334006F313B /* YouTubeService+Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YouTubeService+Response.swift"; sourceTree = "<group>"; };
+		2F01F0AC237214B1006F313B /* UIImage+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+App.swift"; sourceTree = "<group>"; };
+		2F01F0B12372170C006F313B /* VideoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailVC.swift; sourceTree = "<group>"; };
+		2F01F0B323721714006F313B /* VideoDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailReactor.swift; sourceTree = "<group>"; };
+		2F01F0B52372171C006F313B /* VideoDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailCoordinator.swift; sourceTree = "<group>"; };
+		2F01F0B723721724006F313B /* VideoDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailInteractor.swift; sourceTree = "<group>"; };
+		2F01F0B92372193E006F313B /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		2F01F0BB23721A8D006F313B /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		2F01F0BE23721DA8006F313B /* ChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelView.swift; sourceTree = "<group>"; };
+		2F01F0C323721EED006F313B /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		2F01F0C52372202A006F313B /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		2F01F0C723722351006F313B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		2F01F0C9237227C8006F313B /* DetailView.Data+Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailView.Data+Video.swift"; sourceTree = "<group>"; };
 		2F420540237167170033C31D /* DemoYouTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoYouTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F420543237167170033C31D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F420549237167180033C31D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,7 +103,7 @@
 		2F42056923716A080033C31D /* SelfContaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContaner.swift; sourceTree = "<group>"; };
 		2F42056B23716A200033C31D /* AssociatedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedStore.swift; sourceTree = "<group>"; };
 		2F42056D23716ABE0033C31D /* ModuleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleType.swift; sourceTree = "<group>"; };
-		2FAFD611237196A500AA364E /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		2FAFD611237196A500AA364E /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
 		2FAFD6142371985200AA364E /* VideoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSection.swift; sourceTree = "<group>"; };
 		2FAFD6172371987D00AA364E /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		2FAFD61A23719A4C00AA364E /* SceneView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneView+.swift"; sourceTree = "<group>"; };
@@ -103,10 +127,10 @@
 		2FD6ACF62371707800C8C10F /* ModuleCoreAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCoreAliases.swift; sourceTree = "<group>"; };
 		2FD6ACF82371709E00C8C10F /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		2FD6ACFA237170B300C8C10F /* Interactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactable.swift; sourceTree = "<group>"; };
-		2FD6ACFC2371771A00C8C10F /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
-		2FD6ACFE2371772000C8C10F /* ListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReactor.swift; sourceTree = "<group>"; };
-		2FD6AD002371772800C8C10F /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
-		2FD6AD022371773000C8C10F /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		2FD6ACFC2371771A00C8C10F /* TrendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsVC.swift; sourceTree = "<group>"; };
+		2FD6ACFE2371772000C8C10F /* TrendsReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsReactor.swift; sourceTree = "<group>"; };
+		2FD6AD002371772800C8C10F /* TrendsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsInteractor.swift; sourceTree = "<group>"; };
+		2FD6AD022371773000C8C10F /* TrendsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsCoordinator.swift; sourceTree = "<group>"; };
 		2FD6AD052371779900C8C10F /* BaseReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReactor.swift; sourceTree = "<group>"; };
 		2FD6AD07237177C500C8C10F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		2FD6AD09237177EA00C8C10F /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
@@ -145,6 +169,50 @@
 			path = YouTubeService;
 			sourceTree = "<group>";
 		};
+		2F01F0AE2372168A006F313B /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		2F01F0AF23721691006F313B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		2F01F0B0237216FA006F313B /* VideoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2F01F0BD23721CC4006F313B /* Views */,
+				2F01F0B12372170C006F313B /* VideoDetailVC.swift */,
+				2F01F0B323721714006F313B /* VideoDetailReactor.swift */,
+				2F01F0B723721724006F313B /* VideoDetailInteractor.swift */,
+				2F01F0B52372171C006F313B /* VideoDetailCoordinator.swift */,
+			);
+			path = VideoDetail;
+			sourceTree = "<group>";
+		};
+		2F01F0BD23721CC4006F313B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F01F0BE23721DA8006F313B /* ChannelView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2F01F0C223721EDC006F313B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F01F0C323721EED006F313B /* SeparatorView.swift */,
+				2F01F0C723722351006F313B /* DetailView.swift */,
+				2F01F0C9237227C8006F313B /* DetailView.Data+Video.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2F420537237167170033C31D = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +239,7 @@
 				2F42055E237169040033C31D /* Resources */,
 				2FBFFD1D23719E37004D8C31 /* API */,
 				2FAFD6162371987200AA364E /* Models */,
+				2F01F0C223721EDC006F313B /* Views */,
 				2F42055D237168F20033C31D /* Scenes */,
 				2F42055F237169180033C31D /* App */,
 				2F420543237167170033C31D /* AppDelegate.swift */,
@@ -182,7 +251,10 @@
 		2F42055D237168F20033C31D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				2FD6ACF52371702100C8C10F /* List */,
+				2FD6ACF52371702100C8C10F /* Trends */,
+				2F01F0AF23721691006F313B /* Search */,
+				2F01F0AE2372168A006F313B /* Favorites */,
+				2F01F0B0237216FA006F313B /* VideoDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -193,6 +265,7 @@
 				2F420549237167180033C31D /* Assets.xcassets */,
 				2F42054E237167180033C31D /* LaunchScreen.storyboard */,
 				2FD6AD1923717CD400C8C10F /* ColorPallete.swift */,
+				2F01F0AC237214B1006F313B /* UIImage+App.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -332,17 +405,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2FD6ACF52371702100C8C10F /* List */ = {
+		2FD6ACF52371702100C8C10F /* Trends */ = {
 			isa = PBXGroup;
 			children = (
 				2FCE60D6237192E300DAD27C /* Views */,
 				2FAFD6132371984600AA364E /* Models */,
-				2FD6ACFC2371771A00C8C10F /* ListVC.swift */,
-				2FD6ACFE2371772000C8C10F /* ListReactor.swift */,
-				2FD6AD002371772800C8C10F /* ListInteractor.swift */,
-				2FD6AD022371773000C8C10F /* ListCoordinator.swift */,
+				2FD6ACFC2371771A00C8C10F /* TrendsVC.swift */,
+				2FD6ACFE2371772000C8C10F /* TrendsReactor.swift */,
+				2FD6AD002371772800C8C10F /* TrendsInteractor.swift */,
+				2FD6AD022371773000C8C10F /* TrendsCoordinator.swift */,
 			);
-			path = List;
+			path = Trends;
 			sourceTree = "<group>";
 		};
 		2FD6AD042371778800C8C10F /* Base */ = {
@@ -374,8 +447,11 @@
 		2FD6AD1B23717DE700C8C10F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2F01F0B92372193E006F313B /* UIView+.swift */,
 				2FD6AD1C23717DEE00C8C10F /* UIColor+.swift */,
-				2FAFD611237196A500AA364E /* UITableView+Reusable.swift */,
+				2FAFD611237196A500AA364E /* UICollectionView+Reusable.swift */,
+				2F01F0BB23721A8D006F313B /* UIStackView+.swift */,
+				2F01F0C52372202A006F313B /* UILabel+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -512,52 +588,64 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FD6ACFB237170B300C8C10F /* Interactable.swift in Sources */,
+				2F01F0C823722351006F313B /* DetailView.swift in Sources */,
 				2F01F0A52371FE32006F313B /* Channel.swift in Sources */,
 				2F01F0AB23720334006F313B /* YouTubeService+Response.swift in Sources */,
 				2FD6AD1823717BAE00C8C10F /* BaseVC.swift in Sources */,
 				2FBFFD2F23719FC6004D8C31 /* APIServiceConfiguratorType.swift in Sources */,
-				2FAFD612237196A500AA364E /* UITableView+Reusable.swift in Sources */,
+				2FAFD612237196A500AA364E /* UICollectionView+Reusable.swift in Sources */,
 				2FBFFD2723719F1E004D8C31 /* APIServiceType+.swift in Sources */,
 				2FBFFD3C2371A15B004D8C31 /* RequestBuilder.swift in Sources */,
 				2F420544237167170033C31D /* AppDelegate.swift in Sources */,
 				2F42056A23716A080033C31D /* SelfContaner.swift in Sources */,
 				2FAFD6182371987D00AA364E /* Video.swift in Sources */,
-				2FD6AD032371773000C8C10F /* ListCoordinator.swift in Sources */,
+				2FD6AD032371773000C8C10F /* TrendsCoordinator.swift in Sources */,
 				2FAFD6152371985200AA364E /* VideoSection.swift in Sources */,
+				2F01F0CA237227C8006F313B /* DetailView.Data+Video.swift in Sources */,
+				2F01F0B22372170C006F313B /* VideoDetailVC.swift in Sources */,
 				2FCE60D82371936800DAD27C /* VideoCell.swift in Sources */,
-				2FD6ACFF2371772000C8C10F /* ListReactor.swift in Sources */,
+				2FD6ACFF2371772000C8C10F /* TrendsReactor.swift in Sources */,
 				2F42056C23716A200033C31D /* AssociatedStore.swift in Sources */,
+				2F01F0B62372171C006F313B /* VideoDetailCoordinator.swift in Sources */,
 				2FD6AD14237178DE00C8C10F /* ObservableType+.swift in Sources */,
 				2FD6AD0A237177EA00C8C10F /* CoordinatorType.swift in Sources */,
 				2FBFFD2D23719F90004D8C31 /* APICoreAliases.swift in Sources */,
 				2FD6ACF72371707800C8C10F /* ModuleCoreAliases.swift in Sources */,
+				2F01F0BC23721A8D006F313B /* UIStackView+.swift in Sources */,
 				2FBFFD2923719F46004D8C31 /* MockSampleData.swift in Sources */,
 				2FBFFD362371A08C004D8C31 /* MethodParams.swift in Sources */,
 				2FBFFD322371A01C004D8C31 /* AuthStrategy.swift in Sources */,
 				2FAFD61B23719A4C00AA364E /* SceneView+.swift in Sources */,
+				2F01F0B823721724006F313B /* VideoDetailInteractor.swift in Sources */,
 				2FBFFD382371A0AB004D8C31 /* ConfiguratorContainer.swift in Sources */,
 				2FD6AD1A23717CD400C8C10F /* ColorPallete.swift in Sources */,
 				2FBFFD412371A298004D8C31 /* YouTubeConfigurator.swift in Sources */,
-				2FD6AD012371772800C8C10F /* ListInteractor.swift in Sources */,
+				2FD6AD012371772800C8C10F /* TrendsInteractor.swift in Sources */,
 				2FD6AD0C2371780100C8C10F /* DisposeBagHolder.swift in Sources */,
 				2FBFFD342371A02F004D8C31 /* AuthTokenProvider.swift in Sources */,
 				2F01F0A32371FDB8006F313B /* YouTubeService.Methods+Mocks.swift in Sources */,
 				2F4205612371692D0033C31D /* App.swift in Sources */,
+				2F01F0BF23721DA8006F313B /* ChannelView.swift in Sources */,
 				2FD6AD16237178FB00C8C10F /* OptionalType.swift in Sources */,
 				2F01F0A12371F780006F313B /* Plugins.swift in Sources */,
 				2FBFFD3A2371A115004D8C31 /* BinaryData.swift in Sources */,
 				2FD6AD0E2371784800C8C10F /* UINavigationController+.swift in Sources */,
-				2FD6ACFD2371771A00C8C10F /* ListVC.swift in Sources */,
+				2FD6ACFD2371771A00C8C10F /* TrendsVC.swift in Sources */,
+				2F01F0C62372202A006F313B /* UILabel+.swift in Sources */,
 				2FBFFD3F2371A1F8004D8C31 /* JSONDecoder+.swift in Sources */,
 				2FD6AD1D23717DEE00C8C10F /* UIColor+.swift in Sources */,
 				2FD6AD08237177C500C8C10F /* BaseCoordinator.swift in Sources */,
 				2FD6ACF92371709E00C8C10F /* Coordinatable.swift in Sources */,
+				2F01F0BA2372193E006F313B /* UIView+.swift in Sources */,
 				2F01F0A923720038006F313B /* YouTubeRequestBuilder.swift in Sources */,
+				2F01F0B423721714006F313B /* VideoDetailReactor.swift in Sources */,
 				2FD6AD112371789B00C8C10F /* Reactor+.swift in Sources */,
 				2FBFFD2323719EE1004D8C31 /* APIService.swift in Sources */,
 				2F420563237169350033C31D /* AppFactory.swift in Sources */,
 				2FBFFD2523719F19004D8C31 /* APIServiceType.swift in Sources */,
 				2FBFFD1F23719E4F004D8C31 /* YouTubeService.swift in Sources */,
+				2F01F0AD237214B1006F313B /* UIImage+App.swift in Sources */,
+				2F01F0C423721EED006F313B /* SeparatorView.swift in Sources */,
 				2FBFFD2B23719F61004D8C31 /* APIServiceMethod.swift in Sources */,
 				2F42056E23716ABE0033C31D /* ModuleType.swift in Sources */,
 				2FD6AD062371779900C8C10F /* BaseReactor.swift in Sources */,

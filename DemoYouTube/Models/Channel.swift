@@ -11,6 +11,7 @@ import Foundation
 struct Channel {
     let id: String
     let title: String
+    let logo: String
     
-    static let unknown = Channel(id: "", title: "")
+    static let unknown = Channel(id: "", title: "", logo: "")
 }

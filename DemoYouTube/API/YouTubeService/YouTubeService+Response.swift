@@ -13,6 +13,12 @@ extension YouTubeService {
         var pageInfo: PageInfo
         let items: [ItemInfo]
     }
+    
+    struct ChannelResponse: Decodable {
+        var nextPageToken: String?
+        var pageInfo: PageInfo
+        let items: [ItemInfo]
+    }
         
     struct PageInfo: Decodable {
         let totalResults: Int
@@ -72,14 +78,12 @@ extension YouTubeService {
 
 
 extension Video {
-    init(itemInfo: YouTubeService.ItemInfo) {
+    
+    init(itemInfo: YouTubeService.ItemInfo, channel: Channel) {
         
         self.id = itemInfo.id
         self.title = itemInfo.snippet.title
         self.description = itemInfo.snippet.description
-        
-        let channel = Channel(id: itemInfo.snippet.channelId ?? "",
-                              title: itemInfo.snippet.channelTitle ?? "")
         self.channel = channel
         self.statistics = Video.Statistics(statisticsInfo: itemInfo.statistics)
         self.thumbnails = Video.Thumbnails(thumbnails: itemInfo.snippet.thumbnails)
@@ -100,5 +104,21 @@ extension Video.Thumbnails {
         self.max = thumbnails.maxres?.url ?? ""
         self.standard = thumbnails.standard?.url ?? ""
         self.medium = thumbnails.medium?.url ?? ""
+    }
+}
+
+extension Channel {
+    
+    init(itemInfo: YouTubeService.ItemInfo) {
+    
+        self.id = itemInfo.id
+        self.title = itemInfo.snippet.title
+        
+        let thumbnails = Video.Thumbnails(thumbnails: itemInfo.snippet.thumbnails)
+        
+        if !thumbnails.max.isEmpty { self.logo = thumbnails.max }
+        else if !thumbnails.standard.isEmpty { self.logo = thumbnails.standard }
+        else if !thumbnails.medium.isEmpty { self.logo = thumbnails.medium }
+        else { self.logo = "" }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ListCoordinator.swift
+//  ListInteractor.swift
 //  DemoYouTube
 //
 //  Created by Andrey Raevnev on 05.11.2019.
@@ -8,6 +8,17 @@
 
 import RxSwift
 
-public final class ListCoordinator: BaseCoordinator {
+class TrendsInteractor {
+
+    func videos() -> Single<[Video]> {
+        return YouTubeRequestBuilder.trends()
+    }
     
 }
+
+
+
+
+
+
+

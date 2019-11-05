@@ -1,5 +1,5 @@
 //
-//  UITableView+Reusable.swift
+//  UICollectionView+Reusable.swift
 //  DemoYouTube
 //
 //  Created by Andrey Raevnev on 05.11.2019.
@@ -17,6 +17,27 @@ extension Reusable {
         return String(describing: self)
     }
 }
+
+public extension UICollectionView {
+
+    final func register<T: UICollectionViewCell>(_ cellType: T.Type)
+        where T: Reusable {
+            self.register(cellType.self, forCellWithReuseIdentifier: cellType.reuseIdentifier)
+    }
+
+    final func dequeue<T: UICollectionViewCell>(for indexPath: IndexPath, cellType: T.Type = T.self) -> T
+        where T: Reusable {
+            guard let cell = self.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
+                fatalError(
+                    "Failed to dequeue a cell with identifier \(cellType.reuseIdentifier) matching type \(cellType.self). "
+                        + "Check that the reuseIdentifier is set properly in your XIB/Storyboard "
+                        + "and that you registered the cell beforehand"
+                )
+            }
+            return cell
+    }
+}
+
 
 public extension UITableView {
 

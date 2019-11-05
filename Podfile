@@ -16,5 +16,6 @@ target 'DemoYouTube' do
   
   pod 'Moya', '~> 13.0.1'
   pod 'Moya/RxSwift', '~> 13.0.1'
+  pod 'Kingfisher', '~> 4.0'
   
 end

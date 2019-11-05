@@ -14,6 +14,7 @@ public final class YouTubeService: APIService<YouTubeService.Methods, YouTubeCon
     
     public enum Methods {
         case trends
+        case channels(ids: [String])
     }
 }
 
@@ -22,6 +23,7 @@ extension YouTubeService.Methods: APIServiceMethod {
     public var methodPath: MethodPath {
         switch self {
         case .trends: return (.get, "videos")
+        case .channels: return (.get, "channels")
         }
     }
     
@@ -33,12 +35,14 @@ extension YouTubeService.Methods: APIServiceMethod {
         url["regionCode"] = "RU"
         url["maxResults"] = 20
         
-        
         switch self {
         case .trends:
             url["type"] = "video"
             url["part"] = "snippet,contentDetails,statistics"
             url["chart"] = "mostPopular"
+        case .channels(let ids):
+            url["part"] = "snippet,contentDetails,statistics,brandingSettings"
+            url["id"] = ids.joined(separator: ",")
         }
         
         return MethodParams(inUrl: url, inBody: body)

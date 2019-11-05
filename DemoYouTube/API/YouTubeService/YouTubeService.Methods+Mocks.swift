@@ -12,11 +12,13 @@ public extension YouTubeService.Methods {
     
     enum MockKey: String, MockKeyType {
         case trends
+        case channels
     }
     
     var mockKey: MockKey? {
         switch self {
         case .trends: return .trends
+        case .channels: return .channels
         }
     }
 }
@@ -1770,6 +1772,8 @@ extension YouTubeService.Methods.MockKey : MockSampleData {
               }
             }
             """
+            
+        default: return ""
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ListInteractor.swift
+//  VideoDetailCoordinator.swift
 //  DemoYouTube
 //
 //  Created by Andrey Raevnev on 05.11.2019.
@@ -8,17 +8,10 @@
 
 import RxSwift
 
-class ListInteractor {
-
-    func videos() -> Single<[Video]> {
-        return YouTubeRequestBuilder.trends()
+class VideoDetailCoordinator: BaseCoordinator {
+    
+    func openChannel(_ channel: Channel) {
+        
     }
     
 }
-
-
-
-
-
-
-

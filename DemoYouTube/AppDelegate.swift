@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         ConfiguratorContainer.instanceLazyInit.register(youTubeConfigurator)
         
-        let vc = App.shared.factory.list()
+        let vc = App.shared.factory.tabs()
         
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
