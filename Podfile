@@ -14,7 +14,7 @@ target 'DemoYouTube' do
   
   pod 'SnapKit', '~> 5.0.0'
   
-  pod 'Moya'
-  
+  pod 'Moya', '~> 13.0.1'
+  pod 'Moya/RxSwift', '~> 13.0.1'
   
 end
