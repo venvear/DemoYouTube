@@ -8,7 +8,17 @@
 
 import RxSwift
 
-public final class ListInteractor {
+class ListInteractor {
 
+    func videos() -> Single<[Video]> {
+        return YouTubeRequestBuilder.trends()
+    }
     
 }
+
+
+
+
+
+
+

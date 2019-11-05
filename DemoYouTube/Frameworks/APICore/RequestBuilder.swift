@@ -9,7 +9,7 @@
 import Moya
 import RxSwift
 
-open class RequestBuilder<S: APIServiceType>  {
+class RequestBuilder<S: APIServiceType>  {
   
     private let method: S.Method
     
@@ -17,7 +17,7 @@ open class RequestBuilder<S: APIServiceType>  {
         self.method = method
     }
   
-    private func request() -> Single<Response> {
+    func request() -> Single<Response> {
         
         let notifyAboutError: (Error) -> Void = { APICoreManager.shared.requestHttpErrorsPublisher.onNext(extractNSError(from: $0)) }
         

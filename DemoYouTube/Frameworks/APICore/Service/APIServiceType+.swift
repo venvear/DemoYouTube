@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension APIServiceType {
+extension APIServiceType {
     static func request(for method: Self.Method) -> RequestBuilder<Self> {
         return RequestBuilder(Self.self, method)
     }

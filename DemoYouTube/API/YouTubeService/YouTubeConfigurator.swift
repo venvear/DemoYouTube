@@ -17,10 +17,12 @@ public final class YouTubeConfigurator: APIServiceConfiguratorType  {
 
     public var plugins: [Plugin] = []
     public var baseUrl: URL
+    public let apiKey: String
     
-    public init(plugins: [Plugin] = [], baseUrl: URL) {
+    public init(plugins: [Plugin] = [], url: String, apiKey: String) {
         self.plugins = plugins
-        self.baseUrl = baseUrl
+        self.baseUrl = URL(string: url)!
+        self.apiKey = apiKey
     }
     
     public func isUnauthorized(response: Response) -> Bool {

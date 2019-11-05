@@ -9,23 +9,24 @@
 import Alamofire
 import RxSwift
 
-public typealias APICoreManager = APICoreObjectContainer
+public typealias APICoreManager = ConfiguratorContainer
 public typealias InternetConnectionStatus = NetworkReachabilityManager.NetworkReachabilityStatus
-public final class APICoreObjectContainer {
+
+public final class ConfiguratorContainer {
  
     //MARK: Instance
     private init() { }
     
-    private static var instance: APICoreObjectContainer?
+    private static var instance: ConfiguratorContainer?
     
-    public static var shared: APICoreObjectContainer { return instanceLazyInit }
+    public static var shared: ConfiguratorContainer { return instanceLazyInit }
     
-    public static var instanceLazyInit: APICoreObjectContainer {
+    public static var instanceLazyInit: ConfiguratorContainer {
         if let instance = instance {
             return instance
         }
         
-        let newInst = APICoreObjectContainer()
+        let newInst = ConfiguratorContainer()
         instance = newInst
         return newInst
     }

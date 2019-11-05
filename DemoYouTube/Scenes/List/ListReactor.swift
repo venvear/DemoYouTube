@@ -33,17 +33,17 @@ class ListReactor: BaseReactor, FullSceneReactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .loadData:
-            
-            var videos = [Video]()
-            videos.append(.init(title: "Video 1"))
-            videos.append(.init(title: "Video 2"))
-            videos.append(.init(title: "Video 3"))
-            videos.append(.init(title: "Video 4"))
-            videos.append(.init(title: "Video 5"))
-            videos.append(.init(title: "Video 6"))
-
-            make(.setVideos(videos))
-            break
+            loadData()
+//            var videos = [Video]()
+//            videos.append(.init(title: "Video 1"))
+//            videos.append(.init(title: "Video 2"))
+//            videos.append(.init(title: "Video 3"))
+//            videos.append(.init(title: "Video 4"))
+//            videos.append(.init(title: "Video 5"))
+//            videos.append(.init(title: "Video 6"))
+//
+//            make(.setVideos(videos))
+//            break
         }
         return .empty()
     }
@@ -62,4 +62,18 @@ class ListReactor: BaseReactor, FullSceneReactor {
 
 fileprivate extension ListReactor {
 
+    func loadData() {
+        interact(interactor.videos(),
+                 complete: ListReactor.dataLoaded,
+                 error: ListReactor.dataLoadFailed,
+                 inProgress: Mutation.setBusy)
+    }
+    
+    func dataLoaded(data: [Video]) {
+       make(.setVideos(data))
+    }
+       
+    func dataLoadFailed(_ error: Error) {
+//           coordinator.show(.alert, title: nil, message: "Ошибка при загрузке заявок", items: .ok)
+    }
 }

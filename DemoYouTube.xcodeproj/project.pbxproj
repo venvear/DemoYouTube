@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F01F0A12371F780006F313B /* Plugins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0A02371F780006F313B /* Plugins.swift */; };
+		2F01F0A32371FDB8006F313B /* YouTubeService.Methods+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0A22371FDB8006F313B /* YouTubeService.Methods+Mocks.swift */; };
+		2F01F0A52371FE32006F313B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0A42371FE32006F313B /* Channel.swift */; };
+		2F01F0A923720038006F313B /* YouTubeRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0A823720038006F313B /* YouTubeRequestBuilder.swift */; };
+		2F01F0AB23720334006F313B /* YouTubeService+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0AA23720334006F313B /* YouTubeService+Response.swift */; };
 		2F420544237167170033C31D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F420543237167170033C31D /* AppDelegate.swift */; };
 		2F42054A237167180033C31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F420549237167180033C31D /* Assets.xcassets */; };
 		2F420550237167180033C31D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F42054E237167180033C31D /* LaunchScreen.storyboard */; };
@@ -30,7 +35,7 @@
 		2FBFFD322371A01C004D8C31 /* AuthStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFFD312371A01C004D8C31 /* AuthStrategy.swift */; };
 		2FBFFD342371A02F004D8C31 /* AuthTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFFD332371A02F004D8C31 /* AuthTokenProvider.swift */; };
 		2FBFFD362371A08C004D8C31 /* MethodParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFFD352371A08C004D8C31 /* MethodParams.swift */; };
-		2FBFFD382371A0AB004D8C31 /* APICoreObjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFFD372371A0AB004D8C31 /* APICoreObjectContainer.swift */; };
+		2FBFFD382371A0AB004D8C31 /* ConfiguratorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFFD372371A0AB004D8C31 /* ConfiguratorContainer.swift */; };
 		2FBFFD3A2371A115004D8C31 /* BinaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFFD392371A115004D8C31 /* BinaryData.swift */; };
 		2FBFFD3C2371A15B004D8C31 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFFD3B2371A15B004D8C31 /* RequestBuilder.swift */; };
 		2FBFFD3F2371A1F8004D8C31 /* JSONDecoder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFFD3E2371A1F8004D8C31 /* JSONDecoder+.swift */; };
@@ -59,6 +64,11 @@
 
 /* Begin PBXFileReference section */
 		2EC0E5AE507C69A1DE302EAB /* Pods-DemoYouTube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoYouTube.release.xcconfig"; path = "Target Support Files/Pods-DemoYouTube/Pods-DemoYouTube.release.xcconfig"; sourceTree = "<group>"; };
+		2F01F0A02371F780006F313B /* Plugins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugins.swift; sourceTree = "<group>"; };
+		2F01F0A22371FDB8006F313B /* YouTubeService.Methods+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YouTubeService.Methods+Mocks.swift"; sourceTree = "<group>"; };
+		2F01F0A42371FE32006F313B /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		2F01F0A823720038006F313B /* YouTubeRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeRequestBuilder.swift; sourceTree = "<group>"; };
+		2F01F0AA23720334006F313B /* YouTubeService+Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YouTubeService+Response.swift"; sourceTree = "<group>"; };
 		2F420540237167170033C31D /* DemoYouTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoYouTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F420543237167170033C31D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F420549237167180033C31D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +94,7 @@
 		2FBFFD312371A01C004D8C31 /* AuthStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStrategy.swift; sourceTree = "<group>"; };
 		2FBFFD332371A02F004D8C31 /* AuthTokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenProvider.swift; sourceTree = "<group>"; };
 		2FBFFD352371A08C004D8C31 /* MethodParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodParams.swift; sourceTree = "<group>"; };
-		2FBFFD372371A0AB004D8C31 /* APICoreObjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICoreObjectContainer.swift; sourceTree = "<group>"; };
+		2FBFFD372371A0AB004D8C31 /* ConfiguratorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguratorContainer.swift; sourceTree = "<group>"; };
 		2FBFFD392371A115004D8C31 /* BinaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryData.swift; sourceTree = "<group>"; };
 		2FBFFD3B2371A15B004D8C31 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		2FBFFD3E2371A1F8004D8C31 /* JSONDecoder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+.swift"; sourceTree = "<group>"; };
@@ -124,6 +134,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F01F0A623720014006F313B /* YouTubeService */ = {
+			isa = PBXGroup;
+			children = (
+				2FBFFD402371A298004D8C31 /* YouTubeConfigurator.swift */,
+				2FBFFD1E23719E4F004D8C31 /* YouTubeService.swift */,
+				2F01F0A22371FDB8006F313B /* YouTubeService.Methods+Mocks.swift */,
+				2F01F0AA23720334006F313B /* YouTubeService+Response.swift */,
+			);
+			path = YouTubeService;
+			sourceTree = "<group>";
+		};
 		2F420537237167170033C31D = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +169,7 @@
 				2FD6AD1B23717DE700C8C10F /* Extensions */,
 				2F420564237169990033C31D /* Frameworks */,
 				2F42055E237169040033C31D /* Resources */,
-				2FBFFD1D23719E37004D8C31 /* APIServices */,
+				2FBFFD1D23719E37004D8C31 /* API */,
 				2FAFD6162371987200AA364E /* Models */,
 				2F42055D237168F20033C31D /* Scenes */,
 				2F42055F237169180033C31D /* App */,
@@ -235,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				2FAFD6172371987D00AA364E /* Video.swift */,
+				2F01F0A42371FE32006F313B /* Channel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,23 +269,24 @@
 			path = "SceneView+";
 			sourceTree = "<group>";
 		};
-		2FBFFD1D23719E37004D8C31 /* APIServices */ = {
+		2FBFFD1D23719E37004D8C31 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				2FBFFD1E23719E4F004D8C31 /* YouTubeService.swift */,
-				2FBFFD402371A298004D8C31 /* YouTubeConfigurator.swift */,
+				2F01F0A823720038006F313B /* YouTubeRequestBuilder.swift */,
+				2F01F0A623720014006F313B /* YouTubeService */,
 			);
-			path = APIServices;
+			path = API;
 			sourceTree = "<group>";
 		};
 		2FBFFD2023719EB5004D8C31 /* APICore */ = {
 			isa = PBXGroup;
 			children = (
 				2FBFFD2C23719F90004D8C31 /* APICoreAliases.swift */,
-				2FBFFD372371A0AB004D8C31 /* APICoreObjectContainer.swift */,
+				2FBFFD372371A0AB004D8C31 /* ConfiguratorContainer.swift */,
 				2FBFFD392371A115004D8C31 /* BinaryData.swift */,
 				2FBFFD352371A08C004D8C31 /* MethodParams.swift */,
 				2FBFFD2823719F46004D8C31 /* MockSampleData.swift */,
+				2F01F0A02371F780006F313B /* Plugins.swift */,
 				2FBFFD3B2371A15B004D8C31 /* RequestBuilder.swift */,
 				2FBFFD302371A011004D8C31 /* Auth */,
 				2FBFFD2123719ED7004D8C31 /* Service */,
@@ -489,6 +512,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FD6ACFB237170B300C8C10F /* Interactable.swift in Sources */,
+				2F01F0A52371FE32006F313B /* Channel.swift in Sources */,
+				2F01F0AB23720334006F313B /* YouTubeService+Response.swift in Sources */,
 				2FD6AD1823717BAE00C8C10F /* BaseVC.swift in Sources */,
 				2FBFFD2F23719FC6004D8C31 /* APIServiceConfiguratorType.swift in Sources */,
 				2FAFD612237196A500AA364E /* UITableView+Reusable.swift in Sources */,
@@ -510,14 +535,16 @@
 				2FBFFD362371A08C004D8C31 /* MethodParams.swift in Sources */,
 				2FBFFD322371A01C004D8C31 /* AuthStrategy.swift in Sources */,
 				2FAFD61B23719A4C00AA364E /* SceneView+.swift in Sources */,
-				2FBFFD382371A0AB004D8C31 /* APICoreObjectContainer.swift in Sources */,
+				2FBFFD382371A0AB004D8C31 /* ConfiguratorContainer.swift in Sources */,
 				2FD6AD1A23717CD400C8C10F /* ColorPallete.swift in Sources */,
 				2FBFFD412371A298004D8C31 /* YouTubeConfigurator.swift in Sources */,
 				2FD6AD012371772800C8C10F /* ListInteractor.swift in Sources */,
 				2FD6AD0C2371780100C8C10F /* DisposeBagHolder.swift in Sources */,
 				2FBFFD342371A02F004D8C31 /* AuthTokenProvider.swift in Sources */,
+				2F01F0A32371FDB8006F313B /* YouTubeService.Methods+Mocks.swift in Sources */,
 				2F4205612371692D0033C31D /* App.swift in Sources */,
 				2FD6AD16237178FB00C8C10F /* OptionalType.swift in Sources */,
+				2F01F0A12371F780006F313B /* Plugins.swift in Sources */,
 				2FBFFD3A2371A115004D8C31 /* BinaryData.swift in Sources */,
 				2FD6AD0E2371784800C8C10F /* UINavigationController+.swift in Sources */,
 				2FD6ACFD2371771A00C8C10F /* ListVC.swift in Sources */,
@@ -525,6 +552,7 @@
 				2FD6AD1D23717DEE00C8C10F /* UIColor+.swift in Sources */,
 				2FD6AD08237177C500C8C10F /* BaseCoordinator.swift in Sources */,
 				2FD6ACF92371709E00C8C10F /* Coordinatable.swift in Sources */,
+				2F01F0A923720038006F313B /* YouTubeRequestBuilder.swift in Sources */,
 				2FD6AD112371789B00C8C10F /* Reactor+.swift in Sources */,
 				2FBFFD2323719EE1004D8C31 /* APIService.swift in Sources */,
 				2F420563237169350033C31D /* AppFactory.swift in Sources */,
@@ -681,7 +709,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.venvear.DemoYouTube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -702,7 +730,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.venvear.DemoYouTube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
