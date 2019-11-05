@@ -24,6 +24,12 @@
 		2F01F0C62372202A006F313B /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0C52372202A006F313B /* UILabel+.swift */; };
 		2F01F0C823722351006F313B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0C723722351006F313B /* DetailView.swift */; };
 		2F01F0CA237227C8006F313B /* DetailView.Data+Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0C9237227C8006F313B /* DetailView.Data+Video.swift */; };
+		2F01F0CC2372304F006F313B /* TapAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0CB2372304F006F313B /* TapAnimatable.swift */; };
+		2F01F0CE237230CF006F313B /* UIView+taptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0CD237230CF006F313B /* UIView+taptic.swift */; };
+		2F01F0D02372314F006F313B /* DetailView.Data+Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0CF2372314F006F313B /* DetailView.Data+Channel.swift */; };
+		2F01F0D223723570006F313B /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0D123723570006F313B /* VideoPlayerView.swift */; };
+		2F01F0D5237239BD006F313B /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01F0D4237239BD006F313B /* YouTubePlayer.swift */; };
+		2F01F0D823723A3A006F313B /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = 2F01F0D723723A3A006F313B /* YTPlayer.html */; };
 		2F420544237167170033C31D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F420543237167170033C31D /* AppDelegate.swift */; };
 		2F42054A237167180033C31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F420549237167180033C31D /* Assets.xcassets */; };
 		2F420550237167180033C31D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F42054E237167180033C31D /* LaunchScreen.storyboard */; };
@@ -93,6 +99,12 @@
 		2F01F0C52372202A006F313B /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		2F01F0C723722351006F313B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		2F01F0C9237227C8006F313B /* DetailView.Data+Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailView.Data+Video.swift"; sourceTree = "<group>"; };
+		2F01F0CB2372304F006F313B /* TapAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAnimatable.swift; sourceTree = "<group>"; };
+		2F01F0CD237230CF006F313B /* UIView+taptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+taptic.swift"; sourceTree = "<group>"; };
+		2F01F0CF2372314F006F313B /* DetailView.Data+Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailView.Data+Channel.swift"; sourceTree = "<group>"; };
+		2F01F0D123723570006F313B /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		2F01F0D4237239BD006F313B /* YouTubePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
+		2F01F0D723723A3A006F313B /* YTPlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YTPlayer.html; sourceTree = "<group>"; };
 		2F420540237167170033C31D /* DemoYouTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoYouTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F420543237167170033C31D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F420549237167180033C31D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,11 +218,23 @@
 		2F01F0C223721EDC006F313B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2F01F0D323723990006F313B /* VideoPlayer */,
 				2F01F0C323721EED006F313B /* SeparatorView.swift */,
 				2F01F0C723722351006F313B /* DetailView.swift */,
 				2F01F0C9237227C8006F313B /* DetailView.Data+Video.swift */,
+				2F01F0CF2372314F006F313B /* DetailView.Data+Channel.swift */,
+				2F01F0CB2372304F006F313B /* TapAnimatable.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2F01F0D323723990006F313B /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				2F01F0D123723570006F313B /* VideoPlayerView.swift */,
+				2F01F0D4237239BD006F313B /* YouTubePlayer.swift */,
+			);
+			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
 		2F420537237167170033C31D = {
@@ -262,6 +286,7 @@
 		2F42055E237169040033C31D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2F01F0D723723A3A006F313B /* YTPlayer.html */,
 				2F420549237167180033C31D /* Assets.xcassets */,
 				2F42054E237167180033C31D /* LaunchScreen.storyboard */,
 				2FD6AD1923717CD400C8C10F /* ColorPallete.swift */,
@@ -452,6 +477,7 @@
 				2FAFD611237196A500AA364E /* UICollectionView+Reusable.swift */,
 				2F01F0BB23721A8D006F313B /* UIStackView+.swift */,
 				2F01F0C52372202A006F313B /* UILabel+.swift */,
+				2F01F0CD237230CF006F313B /* UIView+taptic.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -535,6 +561,7 @@
 			files = (
 				2F420550237167180033C31D /* LaunchScreen.storyboard in Resources */,
 				2F42054A237167180033C31D /* Assets.xcassets in Resources */,
+				2F01F0D823723A3A006F313B /* YTPlayer.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +625,7 @@
 				2FBFFD3C2371A15B004D8C31 /* RequestBuilder.swift in Sources */,
 				2F420544237167170033C31D /* AppDelegate.swift in Sources */,
 				2F42056A23716A080033C31D /* SelfContaner.swift in Sources */,
+				2F01F0D5237239BD006F313B /* YouTubePlayer.swift in Sources */,
 				2FAFD6182371987D00AA364E /* Video.swift in Sources */,
 				2FD6AD032371773000C8C10F /* TrendsCoordinator.swift in Sources */,
 				2FAFD6152371985200AA364E /* VideoSection.swift in Sources */,
@@ -610,7 +638,9 @@
 				2FD6AD14237178DE00C8C10F /* ObservableType+.swift in Sources */,
 				2FD6AD0A237177EA00C8C10F /* CoordinatorType.swift in Sources */,
 				2FBFFD2D23719F90004D8C31 /* APICoreAliases.swift in Sources */,
+				2F01F0CE237230CF006F313B /* UIView+taptic.swift in Sources */,
 				2FD6ACF72371707800C8C10F /* ModuleCoreAliases.swift in Sources */,
+				2F01F0D02372314F006F313B /* DetailView.Data+Channel.swift in Sources */,
 				2F01F0BC23721A8D006F313B /* UIStackView+.swift in Sources */,
 				2FBFFD2923719F46004D8C31 /* MockSampleData.swift in Sources */,
 				2FBFFD362371A08C004D8C31 /* MethodParams.swift in Sources */,
@@ -632,6 +662,7 @@
 				2FD6AD0E2371784800C8C10F /* UINavigationController+.swift in Sources */,
 				2FD6ACFD2371771A00C8C10F /* TrendsVC.swift in Sources */,
 				2F01F0C62372202A006F313B /* UILabel+.swift in Sources */,
+				2F01F0D223723570006F313B /* VideoPlayerView.swift in Sources */,
 				2FBFFD3F2371A1F8004D8C31 /* JSONDecoder+.swift in Sources */,
 				2FD6AD1D23717DEE00C8C10F /* UIColor+.swift in Sources */,
 				2FD6AD08237177C500C8C10F /* BaseCoordinator.swift in Sources */,
@@ -644,6 +675,7 @@
 				2F420563237169350033C31D /* AppFactory.swift in Sources */,
 				2FBFFD2523719F19004D8C31 /* APIServiceType.swift in Sources */,
 				2FBFFD1F23719E4F004D8C31 /* YouTubeService.swift in Sources */,
+				2F01F0CC2372304F006F313B /* TapAnimatable.swift in Sources */,
 				2F01F0AD237214B1006F313B /* UIImage+App.swift in Sources */,
 				2F01F0C423721EED006F313B /* SeparatorView.swift in Sources */,
 				2FBFFD2B23719F61004D8C31 /* APIServiceMethod.swift in Sources */,

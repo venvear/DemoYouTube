@@ -12,7 +12,7 @@ class TrendsCoordinator: BaseCoordinator {
     
     func openVideo(_ video: Video) {
         let scene = App.shared.factory.videoDetail(video)
-        present(scene)
+        present(scene, type: .modally)
     }
     
     func openChannel(_ channel: Channel) {

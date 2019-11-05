@@ -19,5 +19,10 @@ extension UIView {
         subviews.forEach(addSubview)
     }
 
+    func touchInside(_ touches: Set<UITouch>, with event: UIEvent?) -> Bool {
+        guard let touch = touches.first else { return false }
+        let pointTouch = touch.location(in: self)
+        return point(inside: pointTouch, with: event)
+    }
 }
  

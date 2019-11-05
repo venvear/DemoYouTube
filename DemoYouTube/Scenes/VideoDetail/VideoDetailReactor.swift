@@ -15,6 +15,8 @@ class VideoDetailReactor: BaseReactor, FullSceneReactor {
 
     enum Action {
         case loadData
+        case tapClose
+        case tapChannel
     }
 
     enum Mutation {
@@ -39,6 +41,11 @@ class VideoDetailReactor: BaseReactor, FullSceneReactor {
         case .loadData:
             loadData()
           
+        case .tapClose:
+            coordinator.close()
+            
+        case .tapChannel:
+            coordinator.openChannel(currentState.video.channel)
         }
         return .empty()
     }

@@ -80,7 +80,6 @@ extension YouTubeService {
 extension Video {
     
     init(itemInfo: YouTubeService.ItemInfo, channel: Channel) {
-        
         self.id = itemInfo.id
         self.title = itemInfo.snippet.title
         self.description = itemInfo.snippet.description
@@ -110,15 +109,20 @@ extension Video.Thumbnails {
 extension Channel {
     
     init(itemInfo: YouTubeService.ItemInfo) {
-    
         self.id = itemInfo.id
         self.title = itemInfo.snippet.title
+        self.statistics = Channel.Statistics(statisticsInfo: itemInfo.statistics)
         
         let thumbnails = Video.Thumbnails(thumbnails: itemInfo.snippet.thumbnails)
-        
         if !thumbnails.max.isEmpty { self.logo = thumbnails.max }
         else if !thumbnails.standard.isEmpty { self.logo = thumbnails.standard }
         else if !thumbnails.medium.isEmpty { self.logo = thumbnails.medium }
         else { self.logo = "" }
+    }
+}
+
+extension Channel.Statistics {
+    init(statisticsInfo: YouTubeService.Statistics) {
+        self.subscribers = statisticsInfo.subscriberCount ?? ""
     }
 }

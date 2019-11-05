@@ -14,6 +14,10 @@ extension UIImage {
         case trends
         case favorites
         case search
+        case pause
+        case play
+        case cancel
+        case thumb
     }
     
     static func app(_ appImage: AppImage, rendering: RenderingMode = .automatic) -> UIImage? {

@@ -13,7 +13,7 @@ import RxDataSources
 
 class VideoDetailVC: BaseVC, SceneView {
 
-    let videoPlayer = UIView(backgroundColor: .black)
+    let videoPlayerView = VideoPlayerView()
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(backgroundColor: UIColor.white)
@@ -68,17 +68,17 @@ class VideoDetailVC: BaseVC, SceneView {
     override func setupViewAndConstraints() {
         view.backgroundColor = UIColor.white
         
-        view.add(subviews: videoPlayer, scrollView)
+        view.add(subviews: videoPlayerView, scrollView)
         
         let heightVideoPlayer = UIScreen.main.bounds.width * 9 / 16
         
-        videoPlayer.snp.makeConstraints { (make) in
+        videoPlayerView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(heightVideoPlayer)
         }
 
         scrollView.snp.makeConstraints { (make) in
-            make.top.equalTo(videoPlayer.snp.bottom)
+            make.top.equalTo(videoPlayerView.snp.bottom)
             make.left.right.bottom.equalToSuperview()
         }
         
@@ -115,6 +115,16 @@ class VideoDetailVC: BaseVC, SceneView {
 
     func bind(reactor: VideoDetailReactor) {
         
+        videoPlayerView.rx.tapClose
+            .map { _ in VideoDetailReactor.Action.tapClose }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        channelView.rx.tap
+            .map { _ in VideoDetailReactor.Action.tapChannel }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         reactor.state
             .map { $0.video }
             .subscribeNext(self, with: VideoDetailVC.setVideo, bag: disposeBag)
@@ -134,5 +144,7 @@ extension VideoDetailVC {
         titleLabel.text = video.title
         infoLabel.text = "\(video.channel.title) • \(video.statistics.views) просмотров"
         descriptonLabel.text = video.description
+        
+        videoPlayerView.loadVideo(video.id)
     }
 }

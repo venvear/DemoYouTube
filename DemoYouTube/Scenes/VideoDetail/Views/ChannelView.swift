@@ -11,50 +11,27 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base: ChannelView {
-//    var tap: Observable<Void> { return base._tapObservable }
+    var tap: Observable<Void> { return base._tapObservable }
     
     var channel: Binder<Channel> {
-        return Binder(self.base) { el, val in el.channel = val }
+        return Binder(self.base) { el, val in
+            el.detailView.set(data: .init(channel: val))
+        }
     }
 }
 
-class ChannelView: UIView {
+class ChannelView: UIView, TapAnimatable {
     
-    private var tapObservable = PublishSubject<Channel>()
+    internal var tapObservable = PublishSubject<Void>()
     fileprivate lazy var _tapObservable = { tapObservable.asObservable() }()
 
-    let channelLogoButton: UIButton = {
-        let button = UIButton()
-        button.contentMode = .scaleAspectFill
-        button.layer.cornerRadius = 22
-        button.layer.masksToBounds = true
-        button.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
-        return button
-    }()
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .black
-        label.numberOfLines = 1
-        return label
-    }()
-    
-    let infoLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.numberOfLines = 1
-        label.textColor = UIColor.lightGray
-        return label
-    }()
+    let detailView = DetailView()
     
     internal let animationView: UIView = {
         let view = UIView(backgroundColor: .gray)
         view.alpha = 0
         return view
     }()
-    
-    var channel: Channel!
     
     init() {
         super.init(frame: .zero)
@@ -63,39 +40,26 @@ class ChannelView: UIView {
     
     required init?(coder aDecoder: NSCoder) { fatalError() }
     
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: 60)
-    }
-    
     private func setupViewsAndConstraints() {
+        clipsToBounds = true
         backgroundColor = UIColor.white
         
-//        add(subviews: nameLabel, arrowImageView)
-//
-//        nameLabel.snp.makeConstraints { make in
-//            make.left.equalToSuperview().inset(16)
-//            make.centerY.equalToSuperview()
-//            make.right.equalTo(arrowImageView.snp.left).offset(8)
-//        }
-//
-//        arrowImageView.snp.makeConstraints { make in
-//            make.right.equalToSuperview().inset(16)
-//            make.centerY.equalToSuperview()
-//            make.width.equalTo(8)
-//            make.height.equalTo(12)
-//        }
-//
-//        addAnimationView(view: self)
+        add(subviews: detailView)
+        
+        detailView.snp.makeConstraints { (make) in
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalToSuperview().inset(16)
+        }
+
+        addAnimationView(view: self)
     }
     
-    
-    
-//    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        tapBegan(touches, with: event)
-//    }
-//
-//    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        tapEnded(touches, with: event)
-//    }
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        tapBegan(touches, with: event)
+    }
+
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        tapEnded(touches, with: event)
+    }
     
 }
