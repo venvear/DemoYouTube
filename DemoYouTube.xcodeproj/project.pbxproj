@@ -223,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				2F01F0BE23721DA8006F313B /* ChannelView.swift */,
+				2F01F0D323723990006F313B /* VideoPlayer */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,7 +231,6 @@
 		2F01F0C223721EDC006F313B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2F01F0D323723990006F313B /* VideoPlayer */,
 				2F01F0C323721EED006F313B /* SeparatorView.swift */,
 				2F01F0C723722351006F313B /* DetailView.swift */,
 				2F01F0C9237227C8006F313B /* DetailView.Data+Video.swift */,
