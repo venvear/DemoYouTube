@@ -1,19 +1,19 @@
 //
-//  ListInteractor.swift
+//  SearchInteractor.swift
 //  DemoYouTube
 //
-//  Created by Andrey Raevnev on 05.11.2019.
+//  Created by Andrey Raevnev on 06.11.2019.
 //  Copyright © 2019 Andrey Raevnev. All rights reserved.
 //
 
 import RxSwift
 
-class TrendsInteractor {
+class SearchInteractor {
 
     var nextPageToken: String? = nil
     
-    func loadVideos() -> Single<[Video]> {
-        return YouTubeRequestBuilder.trends()
+    func searchVideos(query: String) -> Single<[Video]> {
+        return YouTubeRequestBuilder.search(query: query)
             .map { [weak self] trendsData -> [Video] in
                 
                 self?.nextPageToken = trendsData.nextPageToken
@@ -21,8 +21,8 @@ class TrendsInteractor {
             }
     }
 
-    func loadMoreVideos() -> Single<[Video]> {
-        return YouTubeRequestBuilder.trends(nextPageToken: nextPageToken)
+    func searchMoreVideos(query: String) -> Single<[Video]> {
+        return YouTubeRequestBuilder.search(query: query, nextPageToken: nextPageToken)
             .map { [weak self] trendsData -> [Video] in
                 
                 self?.nextPageToken = trendsData.nextPageToken
@@ -31,10 +31,4 @@ class TrendsInteractor {
     }
 
 }
-
-
-
-
-
-
 

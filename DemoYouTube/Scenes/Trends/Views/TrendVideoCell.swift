@@ -11,15 +11,20 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 
-class VideoCell: UICollectionViewCell, Reusable {
+extension Reactive where Base: TrendVideoCell {
+    var tapChannel: Observable<Void> { return base.detailView.imageButton.rx.tap.mapToVoid() }
+}
+
+class TrendVideoCell: UICollectionViewCell, Reusable {
  
+    var disposeBag = DisposeBag()
+
     static var size: CGSize {
         let width = UIScreen.main.bounds.width
         let heightThubnail = width * 9 / 16
         let height = heightThubnail + DetailView.height
         return .init(width: width, height: height)
     }
-    
     
     let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()

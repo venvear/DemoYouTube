@@ -41,13 +41,13 @@ class DetailView: UIView {
         let subtitle: String
     }
     
-    let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 22
-        imageView.layer.masksToBounds = true
-        imageView.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
-        return imageView
+    let imageButton: UIButton = {
+        let button = UIButton()
+        button.contentMode = .scaleAspectFill
+        button.layer.cornerRadius = 22
+        button.layer.masksToBounds = true
+        button.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
+        return button
     }()
     
     let titleLabel = UILabel(font: .systemFont(ofSize: 16), textColor: .black, numberOfLines: 1)
@@ -73,17 +73,17 @@ class DetailView: UIView {
         backgroundColor = UIColor.white
 //        layer.masksToBounds = true
         
-        add(subviews: imageView, titlesContainer)
+        add(subviews: imageButton, titlesContainer)
         titlesContainer.add(subviews: titleLabel, subTitleLabel)
         
-        imageView.snp.makeConstraints { make in
+        imageButton.snp.makeConstraints { make in
             make.left.centerY.equalToSuperview()
             make.width.height.equalTo(config.showImage ? 44 : 0)
         }
 
         titlesContainer.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.left.equalTo(imageView.snp.right).offset(config.showImage ? 12 : 0)
+            make.left.equalTo(imageButton.snp.right).offset(config.showImage ? 12 : 0)
             make.right.equalToSuperview()
         }
 
@@ -102,11 +102,11 @@ class DetailView: UIView {
         subTitleLabel.text = data.subtitle
         
         guard let url = data.imageUrl else { return }
-        imageView.kf.setImage(with: url)
+        imageButton.kf.setImage(with: url, for: .normal)
     }
     
     public func clear() {
-        imageView.image = nil
+        imageButton.setImage(nil, for: .normal)
         titleLabel.text = nil
         subTitleLabel.text = nil
     }

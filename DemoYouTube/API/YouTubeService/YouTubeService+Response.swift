@@ -20,9 +20,30 @@ extension YouTubeService {
         let items: [ItemInfo]
     }
         
+    struct SearchResponse: Decodable {
+        var nextPageToken: String?
+        var pageInfo: PageInfo
+        let items: [SearchItemInfo]
+    }
+    
     struct PageInfo: Decodable {
         let totalResults: Int
         let resultsPerPage: Int
+    }
+
+    struct SearchItemInfo: Decodable {
+        let id: IdInfo
+        let snippet: Snippet
+        
+        struct IdInfo: Decodable {
+            enum Kind: String {
+                case video = "youtube#video"
+                case channel = "youtube#channel"
+            }
+            var kind: String
+            var videoId: String?
+            var channelId: String?
+        }
     }
     
     struct ItemInfo: Decodable {

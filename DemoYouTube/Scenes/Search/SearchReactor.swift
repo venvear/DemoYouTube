@@ -1,23 +1,22 @@
 //
-//  ListReactor.swift
+//  SearchReactor.swift
 //  DemoYouTube
 //
-//  Created by Andrey Raevnev on 05.11.2019.
+//  Created by Andrey Raevnev on 06.11.2019.
 //  Copyright © 2019 Andrey Raevnev. All rights reserved.
 //
 
 import RxSwift
 
-class TrendsReactor: BaseReactor, FullSceneReactor {
+class SearchReactor: BaseReactor, FullSceneReactor {
 
-    typealias Coordinator = TrendsCoordinator
-    typealias Interactor = TrendsInteractor
+    typealias Coordinator = SearchCoordinator
+    typealias Interactor = SearchInteractor
 
     enum Action {
-        case loadData
+        case search(String)
         case loadMore
         case selected(IndexPath)
-        case tapChannel(IndexPath)
     }
 
     enum Mutation {
@@ -39,11 +38,14 @@ class TrendsReactor: BaseReactor, FullSceneReactor {
     }
 
     let initialState = State()
+
+    var query: String = ""
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .loadData:
-            reloadData()
+        case .search(let query):
+            self.query = query
+            searchVideos()
             
         case .loadMore:
             guard currentState.inProgressLoadMore == false && currentState.endOfData == false else { break }
@@ -52,10 +54,6 @@ class TrendsReactor: BaseReactor, FullSceneReactor {
         case .selected(let indexPath):
             let video = currentState.sections[indexPath.section].items[indexPath.row]
             coordinator.openVideo(video)
-            
-        case .tapChannel(let indexPath):
-            let video = currentState.sections[indexPath.section].items[indexPath.row]
-            coordinator.openChannel(video.channel)
         }
         return .empty()
     }
@@ -81,12 +79,12 @@ class TrendsReactor: BaseReactor, FullSceneReactor {
     }
 }
 
-fileprivate extension TrendsReactor {
+fileprivate extension SearchReactor {
 
-    func reloadData() {
-        interact(interactor.loadVideos(),
-                 complete: TrendsReactor.dataReloaded,
-                 error: TrendsReactor.dataLoadFailed,
+    func searchVideos() {
+        interact(interactor.searchVideos(query: query),
+                 complete: SearchReactor.dataReloaded,
+                 error: SearchReactor.dataLoadFailed,
                  inProgress: Mutation.inProgressLoad)
     }
     
@@ -95,9 +93,9 @@ fileprivate extension TrendsReactor {
     }
        
     func loadMore() {
-        interact(interactor.loadMoreVideos(),
-                 complete: TrendsReactor.loadedMore,
-                 error: TrendsReactor.dataLoadFailed,
+        interact(interactor.searchMoreVideos(query: query),
+                 complete: SearchReactor.loadedMore,
+                 error: SearchReactor.dataLoadFailed,
                  inProgress: Mutation.inProgressLoadMore)
     }
     

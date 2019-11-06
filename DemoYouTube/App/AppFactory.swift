@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import SafariServices
 
 class DefaultFactory: AppFactoryType { }
 
 protocol AppFactoryType: class {
     func tabs() -> Scene
     func trends() -> Scene
+    func search() -> Scene
     func videoDetail(_ video: Video) -> Scene
+    func channelDetail(_ channel: Channel) -> Scene?
 }
 
 extension AppFactoryType {
@@ -22,11 +25,6 @@ extension AppFactoryType {
         
         func createTab(_ vc: Scene, _ title: String, _ image: UIImage?) -> UINavigationController {
             let nc = UINavigationController(rootViewController: vc)
-//            nc.interactivePopGestureRecognizer?.delegate = delegate
-//            nc.interactivePopGestureRecognizer?.isEnabled = true
-//            nc.delegate = navDelegate
-//            nc.isNavigationBarHidden = true
-
             nc.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: image)
             return nc
         }
@@ -34,32 +32,30 @@ extension AppFactoryType {
         let trendsScene = App.shared.factory.trends()
         let trendsTab = createTab(trendsScene, "Тренды", UIImage.app(.trends))
 
-        let searchScene = App.shared.factory.trends()
+        let searchScene = App.shared.factory.search()
         let searchTab = createTab(searchScene, "Поиск", UIImage.app(.search))
 
-//        let favoritesScene = App.shared.factory.trends()
-//        let favoritesTab = createTab(favoritesScene, "Избранное", UIImage.app(.favorites))
-
-        
         let tabVC = UITabBarController()
         tabVC.setViewControllers([trendsTab, searchTab], animated: false)
         
 //        tabVC.tabBar.tintColor = .black
         tabVC.tabBar.isTranslucent = false
         
-//        tabVC.tabBar.tintColor = UIColor.pallete.azul
-//        tabVC.tabBar.backgroundImage = UIImage.by(color: UIColor.pallete.background)
-//        tabVC.view.backgroundColor = UIColor.pallete.background
-        
         return tabVC
     }
-    
-    
     
     func trends() -> Scene {
         let scene = TrendsVC()
         let reactor = TrendsReactor()
         reactor.inject(interactor: TrendsInteractor(), coordinator: TrendsCoordinator(scene: scene))
+        scene.inject(reactor)
+        return scene
+    }
+    
+    func search() -> Scene {
+        let scene = SearchVC()
+        let reactor = SearchReactor()
+        reactor.inject(interactor: SearchInteractor(), coordinator: SearchCoordinator(scene: scene))
         scene.inject(reactor)
         return scene
     }
@@ -71,5 +67,11 @@ extension AppFactoryType {
         reactor.inject(interactor: VideoDetailInteractor(), coordinator: VideoDetailCoordinator(scene: scene))
         scene.inject(reactor)
         return scene
+    }
+    
+    func channelDetail(_ channel: Channel) -> Scene? {
+        guard let url = URL(string: "https://www.youtube.com/channel/\(channel.id)") else { return nil }
+        
+        return SFSafariViewController(url: url)
     }
 }

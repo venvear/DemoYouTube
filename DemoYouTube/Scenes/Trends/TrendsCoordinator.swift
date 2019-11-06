@@ -16,7 +16,8 @@ class TrendsCoordinator: BaseCoordinator {
     }
     
     func openChannel(_ channel: Channel) {
-        
+        guard let scene = App.shared.factory.channelDetail(channel) else { return }
+        present(scene, type: .modally)
     }
     
 }

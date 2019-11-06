@@ -1,32 +1,43 @@
 //
-//  ListVC.swift
+//  SearchVC.swift
 //  DemoYouTube
 //
-//  Created by Andrey Raevnev on 05.11.2019.
+//  Created by Andrey Raevnev on 06.11.2019.
 //  Copyright © 2019 Andrey Raevnev. All rights reserved.
 //
 
 import UIKit
 import SnapKit
 import RxSwift
+import RxCocoa
 import RxDataSources
 
-class TrendsVC: BaseVC, SceneView {
+class SearchVC: BaseVC, SceneView {
 
-    let refreshControl = UIRefreshControl()
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.searchBarStyle = .default
+        searchBar.placeholder = "Найти видео"
+        searchBar.sizeToFit()
+        searchBar.showsCancelButton = false
+        searchBar.autocapitalizationType = .none
+        searchBar.autocorrectionType = .no
+        return searchBar
+    }()
+    
     let activityIndicator = UIActivityIndicatorView(style: .gray)
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = TrendVideoCell.size
+        layout.itemSize = SearchVideoCell.size
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         layout.scrollDirection = .vertical
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.refreshControl = refreshControl
         cv.contentInset = .zero
-        cv.register(TrendVideoCell.self)
+        cv.register(SearchVideoCell.self)
+        cv.keyboardDismissMode = .onDrag
         return cv
     }()
     
@@ -35,29 +46,15 @@ class TrendsVC: BaseVC, SceneView {
             configureCell: { [weak self] _, tv, ip, item in
                 guard let self = self, let reactor = self.reactor else { return UICollectionViewCell() }
 
-                let cell: TrendVideoCell = tv.dequeue(for: ip)
+                let cell: SearchVideoCell = tv.dequeue(for: ip)
                 cell.set(data: item)
-                
-                cell.disposeBag = DisposeBag()
-                cell.rx.tapChannel
-                    .do(onNext: { _ in UIView.tapticButton() })
-                    .map { Reactor.Action.tapChannel(ip) }
-                    .bind(to: reactor.action)
-                    .disposed(by: cell.disposeBag)
-                
                 return cell
         })
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        fire(action: .loadData)
-    }
     
     override func setupViewAndConstraints() {
         
-        navigationItem.title = "Demo YouTube"
+        navigationItem.titleView = searchBar
         
         view.backgroundColor = UIColor.white
         view.add(subviews: collectionView, activityIndicator)
@@ -73,7 +70,7 @@ class TrendsVC: BaseVC, SceneView {
         
     }
 
-    func bind(reactor: TrendsReactor) {
+    func bind(reactor: SearchReactor) {
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
         
         reactor.state
@@ -86,31 +83,26 @@ class TrendsVC: BaseVC, SceneView {
             .map(Reactor.Action.selected)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+
+        reactor.state
+            .map { $0.inProgressLoad }
+            .bind(to: activityIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
         
-        refreshControl.rx.controlEvent(.valueChanged)
-            .asObservable()
-            .map { Reactor.Action.loadData }
+        searchBar.rx.text
+            .orEmpty
+            .debounce(1, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .filter { !$0.isEmpty }
+            .map { SearchReactor.Action.search($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-
-        subscribeNext(reactor.state.map { $0.inProgressLoad }, with: TrendsVC.setInProgress)
-    }
-
-    
-    func setInProgress(inProgress: Bool) {
-        if inProgress {
-            if refreshControl.isRefreshing {}
-            else { activityIndicator.startAnimating() }
-        } else {
-            if refreshControl.isRefreshing { refreshControl.endRefreshing() }
-            else { activityIndicator.stopAnimating() }
-        }
     }
 
     var loadingMore = false
 }
 
-extension TrendsVC: UIScrollViewDelegate {
+extension SearchVC: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if loadingMore { return }

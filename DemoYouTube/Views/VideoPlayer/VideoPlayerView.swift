@@ -164,10 +164,15 @@ class VideoPlayerView: UIView {
     fileprivate func setupViews() {
         backgroundColor = .black
         
-        setupPlayerView()
+        videoPlayer.delegate = self
+        
         setupGradientLayer()
 
-        add(subviews: touchView, controlsContainerView)
+        add(subviews: videoPlayer, touchView, controlsContainerView)
+        
+        videoPlayer.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         touchView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -209,13 +214,6 @@ class VideoPlayerView: UIView {
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradientLayer.locations = [0.7, 1.2]
         controlsContainerView.layer.addSublayer(gradientLayer)
-    }
-    
-    fileprivate func setupPlayerView() {
-        videoPlayer.frame = frame
-        addSubview(videoPlayer)
-        
-        videoPlayer.delegate = self
     }
     
     func loadVideo(_ videoId: String) {
