@@ -8,11 +8,9 @@
 
 import Moya
 
-public final class YouTubeService: APIService<YouTubeService.Methods, YouTubeConfigurator>  {
+class YouTubeService: APIService<YouTubeService.Methods, YouTubeConfigurator>  {
     
-    override public var authStrategy: AuthStrategy { return .authorizationHeader }
-    
-    public enum Methods {
+    enum Methods {
         case trends(nextPageToken: String?)
         case search(query: String, nextPageToken: String?)
         case channels(ids: [String])
@@ -22,7 +20,7 @@ public final class YouTubeService: APIService<YouTubeService.Methods, YouTubeCon
 
 extension YouTubeService.Methods: APIServiceMethod {
     
-    public var methodPath: MethodPath {
+    var methodPath: MethodPath {
         switch self {
         case .trends, .videos:  return (.get, "videos")
         case .search:           return (.get, "search")
@@ -30,7 +28,7 @@ extension YouTubeService.Methods: APIServiceMethod {
         }
     }
     
-    public var params: MethodParams {
+    var params: MethodParams {
         var url: [String: Any] = [:]
         let body: [String: Any] = [:]
         

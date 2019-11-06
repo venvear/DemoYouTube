@@ -8,7 +8,7 @@
 
 import Moya
 
-public extension YouTubeService.Methods {
+extension YouTubeService.Methods {
     
     enum MockKey: String, MockKeyType {
         case trends
@@ -28,7 +28,7 @@ public extension YouTubeService.Methods {
 }
 
 extension YouTubeService.Methods.MockKey : MockSampleData {
-    public var sampleData: String? {
+    var sampleData: String? {
         switch self {
         case .trends: return
             """
