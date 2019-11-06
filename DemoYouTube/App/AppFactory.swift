@@ -35,12 +35,8 @@ extension AppFactoryType {
         let searchScene = App.shared.factory.search()
         let searchTab = createTab(searchScene, "Поиск", UIImage.app(.search))
 
-        let tabVC = UITabBarController()
+        let tabVC = MainTabsVC()
         tabVC.setViewControllers([trendsTab, searchTab], animated: false)
-        
-//        tabVC.tabBar.tintColor = .black
-        tabVC.tabBar.isTranslucent = false
-        
         return tabVC
     }
     
@@ -73,5 +69,26 @@ extension AppFactoryType {
         guard let url = URL(string: "https://www.youtube.com/channel/\(channel.id)") else { return nil }
         
         return SFSafariViewController(url: url)
+    }
+}
+
+class MainTabsVC: UITabBarController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        updateColors()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        updateColors()
+    }
+    
+    private func updateColors() {
+        tabBar.tintColor = UIColor.systemBlue
+        tabBar.backgroundImage = UIImage.by(color: UIColor.pallete.background)
+        view.backgroundColor = UIColor.pallete.background
     }
 }

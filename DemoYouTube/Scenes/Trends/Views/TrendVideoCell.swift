@@ -22,7 +22,7 @@ class TrendVideoCell: UICollectionViewCell, Reusable {
     static var size: CGSize {
         let width = UIScreen.main.bounds.width
         let heightThubnail = width * 9 / 16
-        let height = heightThubnail + DetailView.height
+        let height = heightThubnail + 12 + DetailView.height + 12
         return .init(width: width, height: height)
     }
     
@@ -47,7 +47,7 @@ class TrendVideoCell: UICollectionViewCell, Reusable {
     }
 
     private func setupViewsAndConstraints() {
-        contentView.backgroundColor = UIColor.white
+        contentView.backgroundColor = UIColor.pallete.background
         
         let separatorView = SeparatorView()
         contentView.add(subviews: thumbnailImageView, detailView, separatorView)
@@ -60,7 +60,7 @@ class TrendVideoCell: UICollectionViewCell, Reusable {
         }
         
         detailView.snp.makeConstraints { (make) in
-            make.top.equalTo(thumbnailImageView.snp.bottom)
+            make.top.equalTo(thumbnailImageView.snp.bottom).offset(12)
             make.left.right.equalToSuperview().inset(16)
         }
         

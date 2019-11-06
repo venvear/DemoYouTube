@@ -11,17 +11,9 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 
-extension Reactive where Base: DetailView {
-//    var tap: Observable<Void> { return base._tapObservable }
-    
-//    var data: Binder<Channel> {
-//        return Binder(self.base) { el, val in el.channel = val }
-//    }
-}
-
 class DetailView: UIView {
     
-    static let height: CGFloat = 44 + 32
+    static let height: CGFloat = 44
     
     struct Config {
         let showImage: Bool
@@ -50,8 +42,8 @@ class DetailView: UIView {
         return button
     }()
     
-    let titleLabel = UILabel(font: .systemFont(ofSize: 16), textColor: .black, numberOfLines: 1)
-    let subTitleLabel = UILabel(font: .systemFont(ofSize: 14), textColor: .lightGray, numberOfLines: 1)
+    let titleLabel = UILabel(font: .systemFont(ofSize: 16), textColor: UIColor.pallete.black, numberOfLines: 1)
+    let subTitleLabel = UILabel(font: .systemFont(ofSize: 14), textColor: UIColor.pallete.gray, numberOfLines: 1)
     
     let titlesContainer = UIView()
     
@@ -70,8 +62,7 @@ class DetailView: UIView {
     }
     
     private func setupViewsAndConstraints() {
-        backgroundColor = UIColor.white
-//        layer.masksToBounds = true
+        backgroundColor = UIColor.pallete.background
         
         add(subviews: imageButton, titlesContainer)
         titlesContainer.add(subviews: titleLabel, subTitleLabel)

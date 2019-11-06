@@ -16,7 +16,7 @@ class VideoDetailVC: BaseVC, SceneView {
     let videoPlayerView = VideoPlayerView()
     
     lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView(backgroundColor: UIColor.white)
+        let scrollView = UIScrollView(backgroundColor: UIColor.pallete.background)
         scrollView.addSubview(scrollContentView)
         scrollContentView.snp.makeConstraints { make in
             make.edges.centerX.equalToSuperview()
@@ -24,35 +24,9 @@ class VideoDetailVC: BaseVC, SceneView {
         return scrollView
     }()
     
-    let scrollContentView = UIView(backgroundColor: UIColor.white)
+    let scrollContentView = UIView(backgroundColor: UIColor.pallete.background)
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .black
-        label.numberOfLines = 1
-        return label
-    }()
-    
-    let infoLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.numberOfLines = 1
-        label.textColor = UIColor.lightGray
-        return label
-    }()
-    
-    lazy var videoInfoView: UIView = {
-        let view = UIView()
-        let stackView = UIStackView(.vertical, spacing: 4, distribution: .fill, alignment: .fill, views: [titleLabel, infoLabel])
-        view.add(subviews: stackView)
-        stackView.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview().inset(12)
-            make.left.right.equalToSuperview().inset(16)
-        }
-        return view
-    }()
-    
+    let videoDetailView = DetailView(config: .init(showImage: false, subtitleOffset: 2))
     let channelView = ChannelView()
     
     let descriptonLabel = UILabel(font: .systemFont(ofSize: 14),
@@ -66,7 +40,7 @@ class VideoDetailVC: BaseVC, SceneView {
     }
     
     override func setupViewAndConstraints() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.pallete.background
         
         view.add(subviews: videoPlayerView, scrollView)
         
@@ -85,14 +59,15 @@ class VideoDetailVC: BaseVC, SceneView {
         let infoSeparatorView = SeparatorView()
         let descriptionSeparatorView = SeparatorView()
 
-        scrollContentView.add(subviews: videoInfoView, channelView, infoSeparatorView, descriptionSeparatorView, descriptonLabel)
+        scrollContentView.add(subviews: videoDetailView, channelView, infoSeparatorView, descriptionSeparatorView, descriptonLabel)
         
-        videoInfoView.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
+        videoDetailView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(12)
+            make.left.right.equalToSuperview().inset(16)
         }
         
         infoSeparatorView.snp.makeConstraints { (make) in
-            make.top.equalTo(videoInfoView.snp.bottom)
+            make.top.equalTo(videoDetailView.snp.bottom).offset(12)
             make.left.right.equalToSuperview()
         }
         
@@ -141,8 +116,7 @@ class VideoDetailVC: BaseVC, SceneView {
 extension VideoDetailVC {
     
     func setVideo(_ video: Video) {
-        titleLabel.text = video.title
-        infoLabel.text = "\(video.channel.title) • \(video.statistics.views) просмотров"
+        videoDetailView.set(data: .init(video: video))
         descriptonLabel.text = video.description
         
         videoPlayerView.loadVideo(video.id)

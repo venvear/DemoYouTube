@@ -56,10 +56,10 @@ class SearchVC: BaseVC, SceneView {
         
         navigationItem.titleView = searchBar
         
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.pallete.background
         view.add(subviews: collectionView, activityIndicator)
         
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = UIColor.pallete.background
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

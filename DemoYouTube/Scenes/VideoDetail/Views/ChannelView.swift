@@ -41,13 +41,13 @@ class ChannelView: UIView, TapAnimatable {
     required init?(coder aDecoder: NSCoder) { fatalError() }
     
     private func setupViewsAndConstraints() {
+        backgroundColor = UIColor.pallete.background
         clipsToBounds = true
-        backgroundColor = UIColor.white
         
         add(subviews: detailView)
         
         detailView.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(12)
             make.left.right.equalToSuperview().inset(16)
         }
 

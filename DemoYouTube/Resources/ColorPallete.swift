@@ -14,9 +14,9 @@ public struct ColorPallete {
     public var white: UIColor { .color(light: .white, dark: .black) }
     public var black: UIColor { .color(light: .black, dark: .white) }
 
-    // фон
-    public var background: UIColor { .color(light: .white, dark: hex("1C1C1E")) }
+    public var background: UIColor { .color(light: .white, dark: hex("1b1b1d")) }
     
+    public var gray: UIColor { .color(light: .lightGray, dark: hex("8e8e92")) }
     
 }
 

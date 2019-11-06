@@ -31,8 +31,8 @@ class SearchVideoCell: UICollectionViewCell, Reusable {
         return imageView
     }()
     
-    let titleLabel = UILabel(font: .systemFont(ofSize: 16), textColor: .black, numberOfLines: 3)
-    let subTitleLabel = UILabel(font: .systemFont(ofSize: 14), textColor: .lightGray, numberOfLines: 2)
+    let titleLabel = UILabel(font: .systemFont(ofSize: 16), textColor: UIColor.pallete.black, numberOfLines: 3)
+    let subTitleLabel = UILabel(font: .systemFont(ofSize: 14), textColor: UIColor.pallete.gray, numberOfLines: 2)
     
     let titlesContainer = UIView()
     
@@ -47,7 +47,7 @@ class SearchVideoCell: UICollectionViewCell, Reusable {
     }
 
     private func setupViewsAndConstraints() {
-        contentView.backgroundColor = UIColor.white
+        contentView.backgroundColor = UIColor.pallete.background
         
         let separatorView = SeparatorView()
         contentView.add(subviews: thumbnailImageView, titlesContainer, separatorView)
